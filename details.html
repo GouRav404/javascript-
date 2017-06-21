@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Product Details</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="main.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+  <script>
+				
+				var qty=10;
+				function change_quantity()
+				{
+					
+					qty=qty-1;
+					document.getElementById("qty").innerHTML=qty;
+					if(qty==0)
+					{
+						 
+						 document.getElementById("myBtn").disabled = true;
+					}
+				}
+				setTimeout(function(){ document.getElementById("myBtn").disabled = true;},120000);
+</script>
+
+  <script>
+function loaded()
+{
+    alert("Buy your product fast this page automatically close in 1 minute ");
+    window.setTimeout(CloseMe, 60000);
+}
+
+function CloseMe() 
+{
+    window.close();
+}
+</script>
+</head>
+<body onLoad="loaded()">
+  	<nav class="navbar navbar-inverse navbar-fixed-top">
+  		<div class="container-fluid">
+    		<div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      			<a class="navbar-brand" href="index.html">The Mobile Store</a>
+    		</div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+    	<ul class="nav navbar-nav">
+            <li><a href="#">Home</a></li>
+      		<li><a href="#">Page 1</a></li>
+      		<li><a href="#">Page 2</a></li>
+      		<li><a href="#">Page 3</a></li>
+    	</ul>
+            </div></div>
+	</nav>
+
+	<div class="container-fluid">
+		<div class="row" style="margin-top: 150px">
+			<div class="col-md-4">
+			<img src="iphone.jpg" class="img-responsive" alt="Iphones" height="400" width="550">
+			</div>
+			<div class="col-md-8">
+
+				<div class="row">
+                     <div class="col-lg-12">
+				<p id="samye"></p>
+        		<script>
+        		function date_time()
+        			{
+                        
+                        var date = new Date();
+                        var n = date.toDateString();
+                        var time = date.toLocaleTimeString();
+
+document.getElementById('samye').innerHTML = n + ' ' + time;
+setTimeout(function(){ date_time(); }, );
+       				}
+        		date_time();
+        		</script>
+                    </div>
+				</div>
+				<div class="row">
+				<h1 style="margin-left: 20%">Product Quantity:</h1>
+				<p id="qty" style="margin-left: 60%; font-size: 80px;">10</p>
+				</div>
+				<div class="row" style="padding-top: 150px;">
+                    			<div class="col-md-5">
+				<button type="button" class="btn btn-primary btn-lg" id="myBtn" onclick="change_quantity()" style="width: 200px">Buy Now</button>
+                    </div></div>
+
+			</div>
+		</div>
+	</div>
+</body>
+</html>
